@@ -9,27 +9,27 @@ load_dotenv()
 
 class Var(object):
     MULTI_CLIENT = False
-    API_ID = int(getenv('API_ID', ''))
-    API_HASH = str(getenv('API_HASH', ''))
-    BOT_TOKEN = str(getenv('BOT_TOKEN'))
-    name = str(getenv('name', 'filetolinkbot'))
+    API_ID = int(getenv('API_ID', '23833258'))
+    API_HASH = str(getenv('API_HASH', '10952b9eb3bda0c23061b671e274adbd'))
+    BOT_TOKEN = str(getenv('BOT_TOKEN', '7696529120:AAHZtbUx6vXuVcHg1b6E-LMcZy1bqRUX1bM'))
+    name = str(getenv('name', 'molevideo_bot'))
     SLEEP_THRESHOLD = int(getenv('SLEEP_THRESHOLD', '60'))
     WORKERS = int(getenv('WORKERS', '4'))
-    BIN_CHANNEL = int(getenv('BIN_CHANNEL', ''))
-    PORT = int(getenv('PORT', '8080'))
-    BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
+    BIN_CHANNEL = int(getenv('BIN_CHANNEL', '-1002335483997'))
+    PORT = int(getenv('PORT', '80'))
+    BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '91.107.188.1'))
     PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
-    OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "").split())  
+    OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", " 203203083").split())  
     NO_PORT = bool(getenv('NO_PORT', False))
     APP_NAME = None
-    OWNER_USERNAME = str(getenv('OWNER_USERNAME', ''))
+    OWNER_USERNAME = str(getenv('OWNER_USERNAME', 'D5cnt'))
     if 'DYNO' in environ:
         ON_HEROKU = True
         APP_NAME = str(getenv('APP_NAME'))
     
     else:
         ON_HEROKU = False
-    FQDN = str(getenv('FQDN', 'BIND_ADRESS:PORT')) if not ON_HEROKU or getenv('FQDN', '') else APP_NAME+'.herokuapp.com'
+    FQDN = str(getenv('FQDN', '91.107.188.1:80')) if not ON_HEROKU or getenv('FQDN', '91.107.188.1:80') else APP_NAME+'.herokuapp.com'
     HAS_SSL=bool(getenv('HAS_SSL',False))
     if HAS_SSL:
         URL = "https://{}/".format(FQDN)
